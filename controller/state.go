@@ -466,7 +466,7 @@ func (m *appStateManager) CompareAppState(app *v1alpha1.Application, project *ap
 	// application conditions as argo.StateDiffs will validate this diffConfig again.
 	diffConfig, _ := diffConfigBuilder.Build()
 
-	log.Debugf("## diffConfig: %+v", diffConfig)
+	log.Debugf("## diffConfig: %v", diffConfig)
 	diffResults, err := argodiff.StateDiffs(reconciliation.Live, reconciliation.Target, diffConfig)
 	if err != nil {
 		diffResults = &diff.DiffResultList{}
@@ -602,7 +602,8 @@ func (m *appStateManager) CompareAppState(app *v1alpha1.Application, project *ap
 	})
 	ts.AddCheckpoint("health_ms")
 	compRes.timings = ts.Timings()
-	log.Infof("compareResults: %+v", compRes)
+	log.Infof("compareResults Modify: %t", compRes.diffResultList.Modified)
+	log.Infof("compareResults list: %v", compRes.diffResultList.Diffs)
 	return &compRes
 }
 
