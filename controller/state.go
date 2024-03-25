@@ -438,6 +438,10 @@ func (m *appStateManager) CompareAppState(app *v1alpha1.Application, project *ap
 		}
 	}
 
+	for i, obj := range targetObjs {
+		logCtx.Debugf("TargetObjs[%d]: %v", i, obj)
+	}
+
 	reconciliation := sync.Reconcile(targetObjs, liveObjByKey, app.Spec.Destination.Namespace, infoProvider)
 	ts.AddCheckpoint("live_ms")
 
@@ -603,7 +607,9 @@ func (m *appStateManager) CompareAppState(app *v1alpha1.Application, project *ap
 	ts.AddCheckpoint("health_ms")
 	compRes.timings = ts.Timings()
 	log.Infof("compareResults Modify: %t", compRes.diffResultList.Modified)
-	log.Infof("compareResults list: %v", compRes.diffResultList.Diffs)
+	for i, df := range compRes.diffResultList.Diffs {
+		log.Infof("compareResults list[%d]: %v", i, df)
+	}
 	return &compRes
 }
 
