@@ -417,6 +417,7 @@ func (m *appStateManager) CompareAppState(app *v1alpha1.Application, project *ap
 
 	// filter out all resources which are not permitted in the application project
 	for k, v := range liveObjByKey {
+		logCtx.Debugf("LiveObj k: %v, v: %v", k, v)
 		if !project.IsLiveResourcePermitted(v, app.Spec.Destination.Server, app.Spec.Destination.Name) {
 			delete(liveObjByKey, k)
 		}
@@ -465,7 +466,7 @@ func (m *appStateManager) CompareAppState(app *v1alpha1.Application, project *ap
 	// application conditions as argo.StateDiffs will validate this diffConfig again.
 	diffConfig, _ := diffConfigBuilder.Build()
 
-	log.Infof("## live: %+v, target: %+v, diffConfig: %+v", reconciliation.Live, reconciliation.Target, diffConfig)
+	log.Debugf("## diffConfig: %+v", diffConfig)
 	diffResults, err := argodiff.StateDiffs(reconciliation.Live, reconciliation.Target, diffConfig)
 	if err != nil {
 		diffResults = &diff.DiffResultList{}
