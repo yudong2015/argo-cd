@@ -1053,7 +1053,7 @@ func (ctrl *ApplicationController) setAppCondition(app *appv1.Application, condi
 }
 
 func (ctrl *ApplicationController) processRequestedAppOperation(app *appv1.Application) {
-	logCtx := log.WithField("application", app.Name)
+	logCtx := log.WithField("Operation#application", app.Name)
 	var state *appv1.OperationState
 	// Recover from any unexpected panics and automatically set the status to be failed
 	defer func() {
@@ -1260,7 +1260,7 @@ func (ctrl *ApplicationController) processAppRefreshQueueItem() (processNext boo
 	}
 
 	app := origApp.DeepCopy()
-	logCtx := log.WithFields(log.Fields{"application": app.Name})
+	logCtx := log.WithFields(log.Fields{"appRefresh#application": app.Name})
 	startTime := time.Now()
 	defer func() {
 		reconcileDuration := time.Since(startTime)
@@ -1508,7 +1508,7 @@ func (ctrl *ApplicationController) autoSync(app *appv1.Application, syncStatus *
 	if app.Spec.SyncPolicy == nil || app.Spec.SyncPolicy.Automated == nil {
 		return nil
 	}
-	logCtx := log.WithFields(log.Fields{"application": app.Name})
+	logCtx := log.WithFields(log.Fields{"autoSync#application": app.Name})
 	if app.Operation != nil {
 		logCtx.Infof("Skipping auto-sync: another operation is in progress")
 		return nil
