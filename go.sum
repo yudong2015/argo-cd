@@ -988,8 +988,8 @@ github.com/xlab/treeprint v0.0.0-20181112141820-a009c3971eca/go.mod h1:ce1O1j6Ut
 github.com/xordataexchange/crypt v0.0.3-0.20170626215501-b2862e3d0a77/go.mod h1:aYKd//L2LvnjZzWKhF00oedf4jCCReLcmhLdhm1A27Q=
 github.com/yudong2015/apimachinery v0.0.0-20240329072045-e9ecfdcd74e3 h1:aggjPRi3UqFuiTerCylyF9NBTZ4KccB7IYr9dpNpARw=
 github.com/yudong2015/apimachinery v0.0.0-20240329072045-e9ecfdcd74e3/go.mod h1:SADt2Kl8/sttJ62RRsi9MIV4o8f5S3coArm0Iu3fBno=
-github.com/yudong2015/gitops-engine v0.0.0-20240329094241-62b5a497aab5 h1:SPL7w2Q1S0cmmhEL2b3M+xiyCngri0NNLillgJJvdKw=
-github.com/yudong2015/gitops-engine v0.0.0-20240329094241-62b5a497aab5/go.mod h1:Vl98W52+U8zJBuY1R9BeST+nBK7al/tDWGPvM7okq40=
+github.com/yudong2015/gitops-engine v0.0.0-20240329154506-b57d1919c56c h1:T4svB4djqXIcMWYB3gAPIcbApjiyobQq3sYxmgiZsvQ=
+github.com/yudong2015/gitops-engine v0.0.0-20240329154506-b57d1919c56c/go.mod h1:Vl98W52+U8zJBuY1R9BeST+nBK7al/tDWGPvM7okq40=
 github.com/yuin/goldmark v1.1.25/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 github.com/yuin/goldmark v1.1.27/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 github.com/yuin/goldmark v1.1.32/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
